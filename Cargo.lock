@@ -3,5 +3,28 @@
 version = 3
 
 [[package]]
-name = "crate_name"
+name = "bootloader"
+version = "0.9.23"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b6e02311b16c9819e7c72866d379cdd3026c3b7b25c1edf161f548f8e887e7ff"
+
+[[package]]
+name = "fmt"
 version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "09904adae26440d46daeacb5ed7922fee69d43ebf84d31e078cd49652cecd718"
+
+[[package]]
+name = "volatile"
+version = "0.2.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6af0edf5b4faacc31fc51159244d78d65ec580f021afcef7bd53c04aeabc7f29"
+
+[[package]]
+name = "wrinkly-os"
+version = "0.1.0"
+dependencies = [
+ "bootloader",
+ "fmt",
+ "volatile",
+]

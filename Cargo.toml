@@ -1,7 +1,8 @@
+
 [package]
-name = "crate_name"
+name = "wrinkly-os"
 version = "0.1.0"
-authors = ["my nama jeff <email@email.com>"]
+edition = "2021"
 
 # the profile used for 'cargo build'
 [profile.dev]
@@ -10,3 +11,8 @@ panic = "abort" # disable stack unwinding on panic
 # profile used for 'caargo build --release'
 [profile.release]
 panic = "abort" # disables stack unwinding on panic
+
+[dependencies]
+bootloader = "0.9.23"
+fmt = "0.1.0"
+volatile = "0.2.6"
