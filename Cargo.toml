@@ -14,5 +14,9 @@ panic = "abort" # disables stack unwinding on panic
 
 [dependencies]
 bootloader = "0.9.23"
-fmt = "0.1.0"
+spin = "0.5.2"
 volatile = "0.2.6"
+
+[dependencies.lazy_static]
+version = "1.0"
+features = ["spin_no_std"]
