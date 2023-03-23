@@ -4,18 +4,24 @@ name = "wrinkly-os"
 version = "0.1.0"
 edition = "2021"
 
+[package.metadata.bootimage]
+test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04", "-serial", "stdio"]
+test-success-exit-code = 33
+
 # the profile used for 'cargo build'
-[profile.dev]
-panic = "abort" # disable stack unwinding on panic
+#[profile.dev]
+#panic = "abort" # disable stack unwinding on panic
 
 # profile used for 'caargo build --release'
-[profile.release]
-panic = "abort" # disables stack unwinding on panic
+#[profile.release]
+#panic = "abort" # disables stack unwinding on panic
 
 [dependencies]
 bootloader = "0.9.23"
 spin = "0.5.2"
 volatile = "0.2.6"
+x86_64 = "0.14.2"
+uart_16550 = "0.2.0"
 
 [dependencies.lazy_static]
 version = "1.0"
