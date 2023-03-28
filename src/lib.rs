@@ -80,5 +80,30 @@ pub fn exit_qemu(exit_code: QemuExitCode) {
 // interrupts
 
 pub fn init() {
+    gdt::init();
     interrupts::init_idt();
 }
+
+
+pub fn printLogo() 
+{
+    println!("                 @@ @@. @              ");
+    println!("           &%@%@@      .@@@%&/&");
+    println!("         @ @@               #@((@");
+    println!("       @&@@     (        #@&   &@");
+    println!("       #@@  @%    .@/ @@      *@@@&");
+    println!("       %@ @*                     &@(");
+    println!("   @,   #@,(&@@@@@@@@@@@@@@@@@@@@@@@@/");
+    println!("   @     @#@   @    ,@@@@@@  @     @(@");
+    println!("     @@@@@ /@@@@  @@ @@@@@@@ *@ @@   @");
+    println!("         @@  .%%/,.          @@@     @");
+    println!("        /@                       *@  @");
+    println!("        @@#                        @ @");
+    println!("        @@@@                       @ @");
+    println!("        @@  %@@/                  @#&@");
+    println!("        @ @    &@@@@@@@@@@@@@@@@@ (@");
+    println!("            .@@.      %@@(      @@");
+    println!("                    ,/#&@@@@/");
+    println!("\nWRINKLY OS: 0.1.0\nJOHN JONES 2023");
+}
+

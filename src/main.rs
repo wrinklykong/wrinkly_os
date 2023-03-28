@@ -9,25 +9,21 @@
 
 use core::panic::PanicInfo;
 use wrinkly_os::println;
+use wrinkly_os::printLogo;
 
 
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
 
-    println!("Hello World{}", "!");
-
+    println!("Hello world!");
     wrinkly_os::init();
-    
-    //fn stack_overflow() {
-    //    stack_overflow();
-    //}
 
-    //stack_overflow();
-    
     #[cfg(test)]
     test_main();
 
     println!("it did not crash!");
+    
+    printLogo();
 
     loop{}
 }
