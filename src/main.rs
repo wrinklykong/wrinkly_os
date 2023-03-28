@@ -24,19 +24,14 @@ pub extern "C" fn _start() -> ! {
     println!("it did not crash!");
     
     //print_logo();
-
-    loop {
-        use wrinkly_os::print;
-        for _ in 0..10000{}
-        print!("-");
-    }
+    wrinkly_os::hlt_loop();
 }
 
 #[cfg(not(test))]
 #[panic_handler]
-fn panic(_info: &PanicInfo) -> ! {
-    println!("{}", _info);
-    loop {}
+fn panic(info: &PanicInfo) -> ! {
+    println!("{}", info);
+    wrinkly_os::hlt_loop();
 }
 
 #[cfg(test)]
