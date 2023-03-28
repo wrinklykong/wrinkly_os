@@ -9,7 +9,7 @@
 
 use core::panic::PanicInfo;
 use wrinkly_os::println;
-use wrinkly_os::printLogo;
+use wrinkly_os::print_logo;
 
 
 #[no_mangle]
@@ -23,9 +23,13 @@ pub extern "C" fn _start() -> ! {
 
     println!("it did not crash!");
     
-    printLogo();
+    //print_logo();
 
-    loop{}
+    loop {
+        use wrinkly_os::print;
+        for _ in 0..10000{}
+        print!("-");
+    }
 }
 
 #[cfg(not(test))]

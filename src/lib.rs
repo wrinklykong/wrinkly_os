@@ -82,10 +82,12 @@ pub fn exit_qemu(exit_code: QemuExitCode) {
 pub fn init() {
     gdt::init();
     interrupts::init_idt();
+    unsafe { interrupts::PICS.lock().initialize() };
+    x86_64::instructions::interrupts::enable();     // enables our PIC to work
 }
 
 
-pub fn printLogo() 
+pub fn print_logo() 
 {
     println!("                 @@ @@. @              ");
     println!("           &%@%@@      .@@@%&/&");
